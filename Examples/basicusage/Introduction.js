@@ -1,9 +1,11 @@
-const { Editor, WordProcessingFormats, EditableDocument, WordProcessingSaveOptions} = require('@groupdocs/groupdocs.editor');
+const { Editor, WordProcessingFormats, EditableDocument, WordProcessingSaveOptions, Action} = require('@groupdocs/groupdocs.editor');
 const Constants = require('../Constants');
+const fs = require('fs');
 
 class Introduction {
     constructor() {
         this.inputFilePath = Constants.SAMPLE_DOCX;
+        console.log(`Introduction: try to open document ${this.inputFilePath}`);
         this.outputPath = Constants.getOutputFilePath("IntroductionOutput", "rtf");
         this.outputPathForStream = Constants.getOutputFilePath("IntroductionOutputFromStream", "rtf");
         this.saveOptions = new WordProcessingSaveOptions(WordProcessingFormats.Rtf);

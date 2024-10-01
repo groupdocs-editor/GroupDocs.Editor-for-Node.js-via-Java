@@ -7,7 +7,7 @@ const { Editor, WordProcessingEditOptions, WordProcessingSaveOptions, WordProces
 class HelloWorld {
     static async run() {
         const documentPath = Constants.SAMPLE_DOCX;
-        console.log(`try to open document ${documentPath}`);
+        console.log(`HelloWorld: try to open document ${documentPath}`);
         try {
             const editor = new Editor(documentPath);
 

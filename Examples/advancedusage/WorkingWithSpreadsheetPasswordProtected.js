@@ -1,11 +1,12 @@
 const {
     Editor,
+    EditableDocument,
     SpreadsheetFormats,
     SpreadsheetEditOptions,
     SpreadsheetLoadOptions,
     SpreadsheetSaveOptions,
-    StreamBuffer,
-    PasswordRequiredException, IncorrectPasswordException
+    WorksheetProtection,
+    WorksheetProtectionType, StreamBuffer
 } = require('@groupdocs/groupdocs.editor');
 const Constants = require('../Constants');
 const path = require('path');
@@ -19,7 +20,8 @@ class WorkingWithSpreadsheetPasswordProtected {
         try {
             await editor.edit();
         } catch (error) {
-            if (error instanceof PasswordRequiredException) {
+            console.log(error.cause)
+            if (error.message.includes("PasswordRequiredException")) {
                 console.log("Cannot edit a document, because it is password-protected, so the password is required");
             }
         }
@@ -31,7 +33,7 @@ class WorkingWithSpreadsheetPasswordProtected {
         try {
             await editor.edit();
         } catch (error) {
-            if (error instanceof IncorrectPasswordException) {
+            if (error.message.includes("PasswordRequiredException")) {
                 console.log("Cannot edit a document, because it is password-protected, and password was specified, but it is incorrect");
             }
         }

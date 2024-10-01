@@ -1,5 +1,6 @@
 const {
     Editor,
+    EditableDocument,
     WordProcessingFormats,
     WordProcessingSaveOptions
 } = require('@groupdocs/groupdocs.editor');

@@ -12,8 +12,8 @@ class Constants {
     static SAMPLE_HTML_BODY = Constants.getSampleFilePath('PureContentSample.html');
     static SAMPLE_HTML_BODY_RESOURCES = Constants.getSampleFilePath('PureContentSample_resources');
     static SAMPLE_CSV = Constants.getSampleFilePath('CarsComma.csv');
-    static SAMPLE_XLSX = Constants.getSampleFilePath('Sample_2SpreadSheet.xlsx');
-    static SAMPLE_XLS_PROTECTED = Constants.getSampleFilePath('sample.xlsx');
+    static SAMPLE_XLSX = Constants.getSampleFilePath('sample.xlsx');
+    static SAMPLE_XLS_PROTECTED = Constants.getSampleFilePath('Sample_2SpreadSheet_pwd.xlsx');
     static SAMPLE_XML = Constants.getSampleFilePath('SampleXmlCorrect.xml');
     static SAMPLE_TXT = Constants.getSampleFilePath('SamplePlainText1.txt');
     static SAMPLE_PPTX = Constants.getSampleFilePath('sample.pptx');

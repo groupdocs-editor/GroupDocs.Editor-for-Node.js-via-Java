@@ -1,4 +1,5 @@
 const {
+    EditableDocument,
     Editor,
     WordProcessingLoadOptions,
     WordProcessingEditOptions

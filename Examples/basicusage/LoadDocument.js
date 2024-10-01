@@ -8,6 +8,7 @@ class LoadDocument {
     async run() {
         try {
             const inputPath = Constants.SAMPLE_DOCX;
+            console.log(`LoadDocument: try to open document ${inputPath}`);
 
             // Load document as file via path and without load options
             const editor1 = new Editor(inputPath);

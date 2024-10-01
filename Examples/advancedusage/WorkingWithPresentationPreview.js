@@ -1,6 +1,8 @@
-const {Editor} = require('@groupdocs/groupdocs.editor');
+const {Editor, SvgImage, PresentationDocumentInfo, StreamBuffer} = require('@groupdocs/groupdocs.editor');
 const Constants = require('../Constants');
 const path = require('path');
+const fs = require('fs-extra');
+const {writeFile} = require("node:fs");
 
 class WorkingWithPresentationPreview {
     static async run() {

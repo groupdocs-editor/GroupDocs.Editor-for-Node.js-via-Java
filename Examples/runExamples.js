@@ -9,6 +9,7 @@ const Introduction = require('./basicusage/Introduction');
 const LoadDocument = require('./basicusage/LoadDocument');
 const EditDocument = require('./basicusage/EditDocument');
 const SaveDocument = require('./basicusage/SaveDocument');
+const CreateDocument = require('./basicusage/CreateDocument');
 
 // Advanced Usage
 const WorkingWithWordProcessing = require('./advancedusage/WorkingWithWordProcessing');
@@ -38,6 +39,7 @@ const GetAllEmbeddedHtmlContent = require('./advancedusage/editabledocumentexamp
 const GetExternalCssContent = require('./advancedusage/editabledocumentexamples/GetExternalCssContent');
 const GetExternalCssContentWithPrefix = require('./advancedusage/editabledocumentexamples/GetExternalCssContentWithPrefix');
 const SaveHtmlToFolder = require('./advancedusage/editabledocumentexamples/SaveHtmlToFolder');
+const WorkingWithResources = require('./advancedusage/editabledocumentexamples/WorkingWithResources');
 const SaveHtmlResourcesToFolder = require('./advancedusage/editabledocumentexamples/SaveHtmlResourcesToFolder');
 const EditableDocumentAdvancedUsage = require('./advancedusage/editabledocumentexamples/EditableDocumentAdvancedUsage');
 
@@ -59,6 +61,7 @@ async function main() {
     await new LoadDocument().run();
     await new EditDocument().run();
     await SaveDocument.run();
+    await new CreateDocument().run();
 
 
     // Advanced Usage
@@ -69,7 +72,7 @@ async function main() {
     await WorkingWithPresentations.run();
     await WorkingWithPlainTextDocuments.run();
     await WorkingWithXml.run();
-    await ExtractingDocumentInfo.run();
+     await ExtractingDocumentInfo.run();
     await SavingEditedDocumentToAllFormats.run();
     await WorkingWithFormats.run();
     await EditingMarkdown.run();
@@ -89,6 +92,7 @@ async function main() {
     await GetExternalCssContent.run();
     await GetExternalCssContentWithPrefix.run();
     await SaveHtmlToFolder.run();
+     await WorkingWithResources.run();
     await SaveHtmlResourcesToFolder.run();
     await EditableDocumentAdvancedUsage.run();
 

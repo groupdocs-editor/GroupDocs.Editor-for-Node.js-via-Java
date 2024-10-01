@@ -16,9 +16,10 @@ class ExtractingDocumentInfo {
         const docxInputFilePath = Constants.SAMPLE_DOCX;
         const editorDocx = new Editor(docxInputFilePath);
         const infoDocx = await editorDocx.getDocumentInfo(null);
-        console.log(`Is '${docxInputFilePath}' a Spreadsheet: ${infoDocx instanceof SpreadsheetDocumentInfo ? "yes" : "no"}`);
-        console.log(`Is '${docxInputFilePath}' a Textual document: ${infoDocx instanceof TextualDocumentInfo ? "yes" : "no"}`);
-        console.log(`Is '${docxInputFilePath}' a WordProcessing document: ${infoDocx instanceof WordProcessingDocumentInfo ? "yes" : "no"}`);
+        const type = "WordProcessing";
+        console.log(`Is '${docxInputFilePath}' a Spreadsheet: ${infoDocx.getFormat().getFormatFamily() == "Spreadsheet"? "yes" : "no"}`);
+        console.log(`Is '${docxInputFilePath}' a Textual document: ${infoDocx.getFormat().getFormatFamily() ==  "Textual" ? "yes" : "no"}`);
+        console.log(`Is '${docxInputFilePath}' a WordProcessing document: ${infoDocx.getFormat().getFormatFamily() == "WordProcessing" ? "yes" : "no"}`);
         console.log(`Format is: ${infoDocx.getFormat().getName()}; extension is: ${infoDocx.getFormat().getExtension()}; Page count: ${infoDocx.getPageCount()}; Size: ${infoDocx.getSize()} bytes; Is encrypted: ${infoDocx.isEncrypted()}`);
         const xlsxInputFilePath = Constants.SAMPLE_XLSX;
         const editorXlsx = new Editor(xlsxInputFilePath);

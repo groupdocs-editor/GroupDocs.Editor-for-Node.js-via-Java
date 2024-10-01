@@ -4,7 +4,7 @@ const {
     WordProcessingFormats,
     WordProcessingEditOptions,
     WordProcessingLoadOptions,
-    WordProcessingSaveOptions, readDataFromStream, StreamBuffer
+    WordProcessingSaveOptions, readDataFromStream, ByteArrayOutputStream
 } = require('@groupdocs/groupdocs.editor');
 const fs = require("fs");
 const Constants = require('../Constants');
@@ -39,15 +39,12 @@ class WorkingWithWordProcessing {
         saveOptions.setOptimizeMemoryUsage(true);
 
         const outputPath = Constants.getOutputFilePath(path.basename(inputFilePath, path.extname(inputFilePath)), docmFormat.getExtension());
-        const bufferOutput = new StreamBuffer();
-        await editor.save(afterEdit, bufferOutput, saveOptions);
-        writeFile(outputPath, bufferOutput.toByteArray(), (err) => {
-            if (err) {
-                console.error('Error writing the file:', err);
-            } else {
-                console.log('File written successfully.');
-            }
-        });
+        const outputStream = new ByteArrayOutputStream();
+            
+        await editor.save(afterEdit, outputStream, saveOptions);
+        const byteArray = outputStream.toByteArray();
+            const bufferOutput = Buffer.from(byteArray);
+            fs.writeFileSync(outputPath, bufferOutput);
 
 
         beforeEdit.dispose();

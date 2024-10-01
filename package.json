@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@groupdocs/groupdocs.editor": "^24.6.1",
+    "@groupdocs/groupdocs.editor": "^24.10",
     "fs-extra": "^11.2.0"
   }
 }
